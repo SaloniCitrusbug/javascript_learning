@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="form.js"></script>
+
+<body>
+    <div class="container mt-3">
+        <h2>Registration form</h2>
+        <form id="form">
+
+            <div class="row">
+                <div class="col">
+                    <label for="name">FirstName:</label>
+                    <input type="text" id="fname" class="form-control" placeholder="Enter first name" name="fname"
+                        required>
+                    <span id="fname_err_msg" class="err_form"> </span>
+                </div>
+                <div class="col">
+                    <label for="name">LastName:</label>
+                    <input type="text" id="lname" class="form-control" placeholder="Enter last name" name="lname"
+                        required>
+                    <span id="lname_err_msg" class="err_form"></span>
+                </div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="abc@gmail.com" name="email">
+                <span id="email_err_msg" class="err_form"></span>
+
+            </div>
+            <div class="mb-3">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                <span id="pass_err_msg" class="err_form"></span>
+
+            </div>
+            <div class="mb-3">
+                <label for="pwd">Confirm Password:</label>
+                <input type="password" class="form-control" id="con_pwd" placeholder="Enter password" name="cpswd">
+                <span id="passw_err_msg" class="err_form"></span>
+
+            </div>
+            <div class="mb-3">
+                <label for="number">Phone number:</label>
+                <input type="" class="form-control" id="number" placeholder="Enter Phone number" name="pnum">
+                <span id="phone_error"> </span>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
+                <label class="form-check-label" for="radio1">Male</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                <label class="form-check-label" for="radio2">Female</label>
+            </div><br>
+            <!-- <label for="">Enter your birthdate:</label>
+            <input type="date"><br><br> -->
+            <label for="country">Select a country:</label>
+            <select id="country" name="country">
+                <option value="India">India</option>
+                <option value="Usa">Usa</option>
+                <option value="UK">UK</option>
+                <option value="Australia">Australia</option>
+            </select><br><br>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" checked> I Accept the terms and
+                    condition
+                </label>
+            </div><br>
+
+            <button type="submit" class="btn btn-primary" id="submit">Submit </button>
+
+        </form>
+        <table>
+            <tr>
+                <th rowspan="2">first name</th>
+                <th>last name</th>
+                <th>surname</th>
+            </tr>
+           <tr>
+            <td>abc</td>
+            <td>def</td>
+            <td>yuh</td>
+           </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
