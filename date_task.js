@@ -96,11 +96,6 @@ let startDate = moment('09-01-2022');
 let endDate = moment('09-11-2022');
 let date = [];
 
-// for (var m = moment(startDate); m.isBefore(endDate); m.add(1, 'days')) {
-//     date.push(m.format('DD-MM-YYYY'));
-// }
-
-var get_date;
 table(date)
 function table(data) {
     for (var m = moment(startDate); m.isBefore(endDate); m.add(1, 'days')) {
@@ -117,28 +112,60 @@ function table(data) {
         table.innerHTML += row
     }
 }
-// console.log(date)
-function display() {
-    get_date = document.getElementById("demo").value;
-    console.log(get_date);
-    // for (let k=get_date;k<=data.length;k++){
 
+$(document).ready(function () {
+
+    var startDate;
+    var endDate;
+    $("#date_picker1").datepicker({
+        dateFormat: 'dd-mm-yy',
+        // max:"2022-09-10"
+    })
+
+    $("#date_picker2").datepicker({
+        dateFormat: 'dd-mm-yy'
+    })
+
+    $('#date_picker1').change(function () {
+        startDate = $(this).datepicker('getDate');
+        $("#date_picker2").datepicker("option", "minDate", startDate);
+    })
+
+    $('#date_picker2').change(function () {
+        endDate = $(this).datepicker('getDate');
+        $("#date_picker1").datepicker("option", "maxDate", endDate);
+    })
+
+})
+
+
+function submit_table() {
+        var table_final = document.getElementById("table_containts")
+        var get_date = document.getElementById("date_picker1").value;
+        var temp = get_date.slice(0,2);
+        // table_1.innerHTML = ``
+        
+        for (var i = temp-1; i < date.length; i++) {
+            var row = `<tr>
+            <td>${date[i]}</td>
+            </tr>`
+            table_final.innerHTML += row
+        }
+    }
+    
+    // function submit_table() {
+    //     var table_1 = document.getElementById("table_containts")
+    //     var get_date = document.getElementById("date_picker1").value;
+    //     console.log(get_date)
+    //     var temp = get_date.slice(-2);
+    //     var result = temp++
+    //     console.log(result)
+    //     table_1.innerHTML = ``
+    
+    //     for (var i = result - 1; i < date.length; i++) {
+    //         var row = `<tr>
+    //             <td>${date[i]}</td>
+    //             </tr>`
+    //         table_1.innerHTML += row
+    //     }
     // }
-}
-// console.log(date)
-function table_1(finalArray) {
-    var table_1 = document.getElementById("table_containts")
-
-    table_1.innerHTML = ``
-    var finalArray = date.filter(function (ele) {
-        return (date >= get_date)
-    });
-    console.log(finalArray)
-
-    // for (var i = 0; i <= finalArray.length; i++) {
-    //     var row = `<tr>
-    //     <td>${finalArray[i]}</td>
-    //     </tr>`
-    //     table_1.innerHTML += row
-    // }
-}
